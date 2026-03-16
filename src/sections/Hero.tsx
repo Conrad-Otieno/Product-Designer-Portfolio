@@ -66,7 +66,7 @@ export function Hero() {
       <div ref={contentRef} className="flex-1 flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 opacity-0">
 
         {/* Avatar */}
-        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 mb-6">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 mb-6">
           <img src={heroConfig.heroImage} alt={heroConfig.heroImageAlt}
             className="w-full h-full object-cover object-top" loading="eager" />
         </div>
