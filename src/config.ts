@@ -22,7 +22,10 @@ export interface HeroConfig {
   heroImageAlt: string;
   overlayText: string;
   brandName: string;
-  brandLogo?: string; // Optional logo image path
+  brandLogo?: string;
+  titleLine1: string;
+  titleLine2: string;
+  titleLine3?: string;
   navLinks: { label: string; href: string }[];
 }
 
@@ -31,8 +34,11 @@ export const heroConfig: HeroConfig = {
   heroImage: asset("/hero-designer.png"),
   heroImageAlt: "Conrad Otieno - Product Designer",
   overlayText: "Crafting Experiences That Matter",
-  brandName: "Conrad.",
-  brandLogo: "", // Empty to use text instead of image
+  brandName: "Conrad Otieno",
+  brandLogo: "",
+  titleLine1: "Building digital products,",
+  titleLine2: "brands,",
+  titleLine3: "and experiences.",
   navLinks: [
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
