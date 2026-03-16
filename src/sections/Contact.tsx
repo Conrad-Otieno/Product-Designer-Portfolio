@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send } from 'lucide-react';
+import { ContactButton } from '../components/ContactButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,29 +172,13 @@ export function Contact() {
 
               {/* Submit Button */}
               <div className="pt-6">
-                <button
+                <ContactButton
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="group relative inline-flex items-center gap-3 px-12 py-4 bg-forest-dark text-white/80 hover:text-white font-sans font-semibold text-base overflow-hidden transition-all duration-300 hover:px-16 focus:outline-none focus:ring-2 focus:ring-forest-dark focus:ring-offset-4 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <span className="relative z-10">
-                    {formStatus === 'sending' ? 'Sending...' : formStatus === 'success' ? 'Message Sent!' : 'Send Message'}
-                  </span>
-                  {formStatus === 'idle' && (
-                    <Send className="w-5 h-5 relative z-10 group-hover:translate-x-2 transition-transform duration-300" aria-hidden="true" />
-                  )}
-                  {formStatus === 'sending' && (
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin relative z-10" />
-                  )}
-                  {formStatus === 'success' && (
-                    <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  )}
-                  
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 bg-forest-mid transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                </button>
+                  label="Send Message"
+                  icon="send"
+                  status={formStatus}
+                />
               </div>
 
               {/* Success Message */}

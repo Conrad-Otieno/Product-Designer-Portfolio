@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { X, ArrowUpRight } from 'lucide-react';
+import { X } from 'lucide-react';
+import { ContactButton } from '../components/ContactButton';
 import { heroConfig } from '../config';
 
 export function Hero() {
@@ -82,11 +83,7 @@ export function Hero() {
         </p>
 
         {/* CTA */}
-        <a href="#contact"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-forest-dark/80 hover:text-forest-dark font-sans font-semibold text-sm rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-md">
-          Contact Me
-          <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-        </a>
+        <ContactButton href="#contact" label="Contact Me" icon="arrow" />
       </div>
 
       {/* Mobile Menu */}
