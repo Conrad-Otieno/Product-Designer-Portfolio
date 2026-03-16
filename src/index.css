@@ -185,9 +185,3 @@
     letter-spacing: -0.05em;
   }
 }
-
-@keyframes scrollLine {
-  0%   { transform: translateY(-100%); }
-  50%  { transform: translateY(150%); }
-  100% { transform: translateY(150%); }
-}
