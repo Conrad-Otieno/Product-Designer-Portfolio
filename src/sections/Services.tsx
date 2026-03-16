@@ -100,23 +100,23 @@ export function Services() {
               return (
                 <article
                   key={index}
-                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-offwhite cursor-pointer focus-within:bg-offwhite"
+                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-forest-dark cursor-pointer focus-within:bg-forest-dark"
                   role="listitem"
                 >
                   <div className="mb-4" aria-hidden="true">
-                    <Icon className="w-8 h-8 text-softblack/70 group-hover:text-softblack transition-colors duration-300" strokeWidth={1.5} />
+                    <Icon className="w-8 h-8 text-softblack/70 group-hover:text-white/80 transition-colors duration-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-sans font-semibold text-softblack mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                  <h3 className="text-lg md:text-xl font-sans font-semibold text-softblack group-hover:text-white mb-3 group-hover:translate-x-1 transition-all duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-softblack/60 font-body leading-relaxed group-hover:text-softblack/80 transition-colors duration-300">
+                  <p className="text-sm text-softblack/60 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
                     {service.description}
                   </p>
 
                   {/* Arrow indicator */}
                   <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                     <svg
-                      className="w-5 h-5 text-softblack/60"
+                      className="w-5 h-5 text-white/60"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
