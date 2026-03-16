@@ -175,7 +175,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="group relative inline-flex items-center gap-3 px-12 py-4 bg-forest-dark text-white font-sans font-semibold text-base overflow-hidden transition-all duration-500 hover:px-16 focus:outline-none focus:ring-2 focus:ring-forest-dark focus:ring-offset-4 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group relative inline-flex items-center gap-3 px-12 py-4 bg-forest-dark text-white/80 hover:text-white font-sans font-semibold text-base overflow-hidden transition-all duration-300 hover:px-16 focus:outline-none focus:ring-2 focus:ring-forest-dark focus:ring-offset-4 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="relative z-10">
                     {formStatus === 'sending' ? 'Sending...' : formStatus === 'success' ? 'Message Sent!' : 'Send Message'}

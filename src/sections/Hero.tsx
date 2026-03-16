@@ -85,7 +85,7 @@ export function Hero() {
 
         {/* CTA */}
         <a href="#projects"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-forest-dark font-sans font-semibold text-sm rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-md">
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-forest-dark/80 hover:text-forest-dark font-sans font-semibold text-sm rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-md">
           View My Work
           <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
         </a>

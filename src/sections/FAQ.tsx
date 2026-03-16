@@ -157,7 +157,7 @@ export function FAQ() {
               {faqConfig.ctaButtonText && (
                 <a
                   href={faqConfig.ctaHref || '#contact'}
-                  className="inline-flex items-center gap-3 px-10 py-5 bg-white text-forest-dark font-sans font-semibold text-base rounded-full hover:bg-offwhite hover:scale-105 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-forest-dark group"
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-white text-forest-dark/80 hover:text-forest-dark font-sans font-semibold text-base rounded-full hover:bg-offwhite hover:scale-105 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-forest-dark group"
                 >
                   {faqConfig.ctaButtonText}
                   <svg 
