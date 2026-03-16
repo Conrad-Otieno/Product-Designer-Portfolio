@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { X, ArrowUpRight } from 'lucide-react';
-import { heroConfig, footerConfig } from '../config';
+import { heroConfig } from '../config';
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,49 +35,26 @@ export function Hero() {
 
       {/* Top Bar */}
       <header className="w-full px-6 md:px-12 py-5 flex items-center justify-between border-b border-white/10 z-50">
-        {/* Left — email + CV */}
-        <div className="flex items-center gap-3">
-          <span className="text-white/50 font-body text-xs hidden sm:block">
-            {footerConfig.email}
-          </span>
-          <a
-            href={`mailto:${footerConfig.email}`}
-            className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 font-body text-xs hover:bg-white hover:text-forest-dark transition-all duration-300"
-          >
-            Copy
-          </a>
-          <a
-            href="#"
-            className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 font-body text-xs hover:bg-white hover:text-forest-dark transition-all duration-300"
-          >
-            CV
-          </a>
-        </div>
+        {/* Left — brand name */}
+        <a
+          href="/Product-Designer-Portfolio/"
+          className="font-sans font-bold text-white text-lg tracking-tight"
+        >
+          {heroConfig.brandName}
+        </a>
 
-        {/* Right — nav links + social */}
-        <div className="hidden md:flex items-center gap-8">
-          <nav aria-label="Main navigation" className="flex items-center gap-6">
-            {heroConfig.navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-white/60 font-body text-sm hover:text-white transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <div className="w-px h-4 bg-white/20" />
-          {footerConfig.socialLinks.filter(s => ['Linkedin', 'Instagram'].includes(s.iconName)).map((social) => (
+        {/* Right — nav links */}
+        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
+          {heroConfig.navLinks.map((link) => (
             <a
-              key={social.label}
-              href={social.href}
-              className="text-white/40 font-body text-xs hover:text-white transition-colors duration-300"
+              key={link.label}
+              href={link.href}
+              className="text-white/60 font-body text-sm hover:text-white transition-colors duration-300"
             >
-              {social.label}
+              {link.label}
             </a>
           ))}
-        </div>
+        </nav>
 
         {/* Mobile menu button */}
         <button
