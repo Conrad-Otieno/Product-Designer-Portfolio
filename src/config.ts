@@ -1,6 +1,8 @@
 // Site Configuration
 // Product Designer Portfolio - Conrad Otieno
 
+import { asset } from './lib/utils';
+
 export interface SiteConfig {
   language: string;
   siteTitle: string;
@@ -26,7 +28,7 @@ export interface HeroConfig {
 
 export const heroConfig: HeroConfig = {
   backgroundText: "DESIGN",
-  heroImage: "/hero-designer.png",
+  heroImage: asset("/hero-designer.png"),
   heroImageAlt: "Conrad Otieno - Product Designer",
   overlayText: "Crafting Experiences That Matter",
   brandName: "Conrad.",
@@ -57,11 +59,11 @@ export const introGridConfig: IntroGridConfig = {
   titleLine2: "That People Love",
   description: "I'm a product designer with 8+ years of experience creating digital products that solve real problems. From startups to Fortune 500 companies, I help teams build intuitive, beautiful, and impactful user experiences.",
   portfolioImages: [
-    { src: "/portfolio-1.jpg", alt: "Mobile app design showcase" },
-    { src: "/portfolio-2.jpg", alt: "Dashboard interface design" },
-    { src: "/portfolio-3.jpg", alt: "E-commerce platform design" },
-    { src: "/portfolio-4.jpg", alt: "Design system components" },
-    { src: "/portfolio-5.jpg", alt: "User research workshop" },
+    { src: asset("/portfolio-1.jpg"), alt: "Mobile app design showcase" },
+    { src: asset("/portfolio-2.jpg"), alt: "Dashboard interface design" },
+    { src: asset("/portfolio-3.jpg"), alt: "E-commerce platform design" },
+    { src: asset("/portfolio-4.jpg"), alt: "Design system components" },
+    { src: asset("/portfolio-5.jpg"), alt: "User research workshop" },
   ],
   accentText: "Selected Works - 2024",
 };
@@ -99,7 +101,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       title: "Enterprise Journey Web App Design",
       category: "Web App Design",
       year: "2024",
-      image: "/project-1.png",
+      image: asset("/project-1.png"),
       description: "Designed an enterprise journey mapping web application that helps organizations visualize and optimize customer experiences across multiple touchpoints.",
     },
     {
@@ -107,7 +109,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       title: "DigitalQatalyst Corporate Website",
       category: "Corporate Web | B2B Digital",
       year: "2025",
-      image: "/project-2.png",
+      image: asset("/project-2.png"),
       description: "Applying the Double Diamond Design Process to transform a digital transformation consultancy's web presence in Dubai.",
     },
     {
@@ -115,7 +117,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       title: "CyberSolution Design System",
       category: "Design Systems",
       year: "2024",
-      image: "/project-3.png",
+      image: asset("/project-3.png"),
       description: "Crafted a comprehensive design system that brings clarity and consistency to digital products through unified components and design tokens.",
     },
   ],
@@ -205,19 +207,19 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
   ],
   featureCards: [
     {
-      image: "/feature-1.jpg",
+      image: asset("/feature-1.jpg"),
       imageAlt: "Collaborative design workshop",
       title: "Collaborative Approach",
       description: "I work closely with your team, ensuring alignment at every stage and fostering a culture of design thinking.",
     },
     {
-      image: "/feature-2.jpg",
+      image: asset("/feature-2.jpg"),
       imageAlt: "Design process visualization",
       title: "Data-Driven Design",
       description: "Every design decision is backed by research, user feedback, and analytics to ensure measurable outcomes.",
     },
   ],
-  wideImage: "/process-wide.jpg",
+  wideImage: asset("/process-wide.jpg"),
   wideImageAlt: "End-to-end design process",
   wideTitle: "From Concept to Launch",
   wideDescription: "A proven process that takes your product from initial ideation through to a polished, market-ready solution.",
@@ -248,21 +250,21 @@ export const testimonialsConfig: TestimonialsConfig = {
       id: 1,
       name: "Sarah Mitchell",
       role: "VP of Product, Khalifa Fund",
-      image: "/testimonial-1.jpg",
+      image: asset("/testimonial-1.jpg"),
       quote: "Conrad's platform design transformed how our teams map and optimize customer journeys. His strategic thinking and user-centric approach delivered a solution that exceeded our expectations.",
     },
     {
       id: 2,
       name: "Ahmed Al-Rashid",
       role: "CEO, DigitalQatalyst",
-      image: "/testimonial-2.jpg",
+      image: asset("/testimonial-2.jpg"),
       quote: "Working with Conrad was a game-changer. He didn't just design a website—he helped us rethink our entire digital presence. The results speak for themselves.",
     },
     {
       id: 3,
       name: "Design Community",
       role: "Featured on Dribbble & Behance",
-      image: "/testimonial-3.jpg",
+      image: asset("/testimonial-3.jpg"),
       quote: "CyberSolution represents the gold standard for design systems. The attention to accessibility, comprehensive documentation, and flexible architecture make it an invaluable resource.",
     },
   ],
@@ -416,7 +418,7 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
     role: "Product Designer",
     product: "Enterprise Journey Platform",
     tools: ["Figma", "Miro", "Maze"],
-    heroImage: "/case-study-1-hero.png",
+    heroImage: asset("/case-study-1-hero.png"),
     overview: "A comprehensive web application designed to streamline enterprise customer journey mapping and analytics. The platform serves product teams, UX designers, and business analysts, enabling them to visualize, analyze, and optimize complex customer experiences across multiple touchpoints.",
     challenge: "Enterprise teams struggled with fragmented tools and disconnected data when mapping customer journeys. Existing solutions were either too simplistic for complex B2B scenarios or too technical for non-developer users. Teams needed a unified platform that could handle sophisticated journey mapping while remaining accessible to all stakeholders.",
     solution: "We created an intuitive web application that combines powerful journey mapping capabilities with real-time analytics and collaboration features. The platform introduces a visual canvas for journey creation, automated data integration, and stakeholder-friendly reporting—all within a responsive, accessible interface that works seamlessly across devices.",
@@ -544,19 +546,19 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
       {
         title: "Enterprise Research & Discovery",
         content: "We conducted stakeholder interviews with product managers, UX designers, and business analysts across multiple organizations. Through contextual inquiries and workflow analysis, we identified key pain points in journey mapping, data integration, and team collaboration.",
-        image: "/case-study-1-research.jpg",
+        image: asset("/case-study-1-research.jpg"),
         imageAlt: "Enterprise stakeholder research sessions"
       },
       {
         title: "Platform Architecture",
         content: "We designed a scalable information architecture that supports complex journey mapping while remaining intuitive. User flow mapping and card sorting exercises helped us create a structure that works for both beginners and power users.",
-        image: "/case-study-1-ia.jpg",
+        image: asset("/case-study-1-ia.jpg"),
         imageAlt: "Platform architecture and user flows"
       },
       {
         title: "Prototyping & Validation",
         content: "We built high-fidelity interactive prototypes and conducted multiple rounds of usability testing with enterprise teams. Each iteration refined the interface based on real feedback, ensuring the platform worked seamlessly for all user roles.",
-        image: "/case-study-1-prototype.jpg",
+        image: asset("/case-study-1-prototype.jpg"),
         imageAlt: "Interactive prototype screens"
       }
     ],
@@ -567,9 +569,9 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
       { metric: "Data Integration", value: "-40%", description: "Reduction in manual data work" }
     ],
     gallery: [
-      { src: "/case-study-1-gallery-1.jpg", alt: "Journey canvas", caption: "Visual journey mapping canvas" },
-      { src: "/case-study-1-gallery-2.jpg", alt: "Collaboration interface", caption: "Real-time collaboration and analytics" },
-      { src: "/case-study-1-gallery-3.jpg", alt: "Data integration", caption: "Smart data integration dashboard" }
+      { src: asset("/case-study-1-gallery-1.jpg"), alt: "Journey canvas", caption: "Visual journey mapping canvas" },
+      { src: asset("/case-study-1-gallery-2.jpg"), alt: "Collaboration interface", caption: "Real-time collaboration and analytics" },
+      { src: asset("/case-study-1-gallery-3.jpg"), alt: "Data integration", caption: "Smart data integration dashboard" }
     ],
     testimonial: {
       quote: "Conrad's platform design transformed how our teams map and optimize customer journeys. The intuitive interface and powerful features exceeded our expectations.",
@@ -579,7 +581,7 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
     nextProject: {
       id: 2,
       title: "DQ Corporate Website",
-      image: "/case-study-2-hero.png"
+      image: asset("/case-study-2-hero.png")
     }
   },
   {
@@ -592,7 +594,7 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
     role: "Lead UX/UI Designer",
     product: "Corporate Website",
     tools: ["Figma", "Miro", "Maze"],
-    heroImage: "/case-study-2-hero.png",
+    heroImage: asset("/case-study-2-hero.png"),
     overview: "DigitalQatalyst is a digital transformation consultancy serving enterprise and government organizations across finance, logistics, energy, and public sectors. Despite deep expertise and a strong portfolio, their digital presence functioned as a static brochure rather than a business development engine.\n\nThis engagement was positioned as a strategic repositioning initiative—not a visual redesign. We restructured the design workflow around AI-accelerated prototyping, moving directly from research to interactive prototypes to shorten validation cycles and reduce production waste.\n\nWithin 90 days of launch:\n• Bounce rate: 67% → 43%\n• Consultation requests: +52%\n• Value clarity: 31% → 71%\n• Mobile bounce: 79% → 49%\n• Page production: 3 weeks → 2.3 days\n\nA measurable commercial transformation.",
     challenge: "DQ operates in a competitive enterprise consulting landscape where credibility, clarity, and trust must be established within seconds. However, the existing website created four structural risks:\n\n1. Positioning Ambiguity – Only 31% of visitors understood what DQ actually does.\n2. Navigation Friction – Services reflected internal taxonomy, not client decision pathways.\n3. Mobile Abandonment – 79% mobile bounce represented lost executive traffic.\n4. Under-leveraged Authority – Enterprise client credibility was hidden below the fold.\n\nThe risk was not aesthetic. The risk was commercial: high-value enterprise traffic was disengaging before qualification.",
     solution: "We created a modern, conversion-focused website that clearly communicates DQ's value proposition through strategic information architecture, mobile-first design, prominent social proof integration, and optimized conversion paths. The redesign achieved a 40% reduction in bounce rate (67% to 43%), 52% increase in consultation form submissions, and 71% visitor comprehension of DQ's core business (up from 31%).",
@@ -665,19 +667,19 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
       {
         title: "Multi-Method Research Program",
         content: "Six-week discovery phase including 8 stakeholder interviews with DQ leadership, 12 user interviews with enterprise clients across GCC region, six months of Google Analytics and Hotjar data analysis, competitive benchmarking of 8 consultancy websites, quantitative survey with 247 respondents, and full content audit of 84 existing pages.",
-        image: "/case-study-2-research.jpg",
+        image: asset("/case-study-2-research.jpg"),
         imageAlt: "Stakeholder workshops and user research sessions"
       },
       {
         title: "Ideation & Prototyping",
         content: "Three cross-functional workshops using 'How Might We' questions and Crazy 8s rapid sketching. Four homepage concepts emerged, with 'Hybrid Convergence' selected as the strongest all-persona solution. Low-fidelity wireframes produced for 14 page templates, followed by two rounds of feedback and iteration.",
-        image: "/case-study-2-data.jpg",
+        image: asset("/case-study-2-data.jpg"),
         imageAlt: "User flows and wireframe iterations"
       },
       {
         title: "Design System & Testing",
         content: "Comprehensive design system with color palette, typography system, and 12-column CSS Grid. Two rounds of usability testing with 24 participants revealed critical issues with pricing opacity and contact clarity, leading to targeted improvements that increased satisfaction scores from 3.6/5 to 4.3/5.",
-        image: "/case-study-2-accessibility.jpg",
+        image: asset("/case-study-2-accessibility.jpg"),
         imageAlt: "Design system and component library"
       }
     ],
@@ -689,15 +691,15 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
       { metric: "Mobile Submissions", value: "31%", description: "Of total leads (previously negligible)" }
     ],
     gallery: [
-      { src: "/case-study-2-homepage.png", alt: "Homepage design", caption: "Modern homepage with dynamic hero section" },
-      { src: "/case-study-2-services.png", alt: "Services page", caption: "Clear service offerings and capabilities" },
-      { src: "/case-study-2-mobile.png", alt: "Mobile responsive design", caption: "Optimized mobile experience" }
+      { src: asset("/case-study-2-homepage.png"), alt: "Homepage design", caption: "Modern homepage with dynamic hero section" },
+      { src: asset("/case-study-2-services.png"), alt: "Services page", caption: "Clear service offerings and capabilities" },
+      { src: asset("/case-study-2-mobile.png"), alt: "Mobile responsive design", caption: "Optimized mobile experience" }
     ],
     liveUrl: "https://digitalqatalyst.com/",
     nextProject: {
       id: 3,
       title: "CyberSolution Design System",
-      image: "/case-study-3-hero.png"
+      image: asset("/case-study-3-hero.png")
     }
   },
   {
@@ -710,7 +712,7 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
     role: "Lead Design Systems Designer",
     product: "CyberSolution Design System",
     tools: ["Figma"],
-    heroImage: "/case-study-3-hero.png",
+    heroImage: asset("/case-study-3-hero.png"),
     overview: "CyberSolution is a comprehensive design system built to illuminate the path toward consistent, accessible, and scalable digital experiences. Created as a passion project, it demonstrates the power of systematic design thinking in creating cohesive products across multiple platforms and touchpoints.",
     challenge: "Modern digital products often suffer from inconsistent experiences across platforms, fragmented design decisions, and accessibility gaps. Teams waste time recreating components and struggle to maintain visual and functional consistency as products scale.\n\nWithout a unified system, design debt accumulates and user experience suffers.",
     challengeCards: [
@@ -801,19 +803,19 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
       {
         title: "Research & Foundation",
         content: "I researched existing design systems and interviewed designers and developers to understand common pain points. This research informed the foundational principles and structure of Lumina.",
-        image: "/case-study-3-checkout.jpg",
+        image: asset("/case-study-3-checkout.jpg"),
         imageAlt: "Design system research and analysis"
       },
       {
         title: "Token & Component Development",
         content: "I built a comprehensive token system and component library from the ground up. Every component was designed with accessibility, flexibility, and scalability in mind.",
-        image: "/case-study-3-journey.jpg",
+        image: asset("/case-study-3-journey.jpg"),
         imageAlt: "Design tokens and component library"
       },
       {
         title: "Documentation & Delivery",
         content: "I created detailed documentation covering design principles, component usage, accessibility guidelines, and implementation examples. The system was packaged for easy adoption by design and development teams.",
-        image: "/case-study-3-mobile.jpg",
+        image: asset("/case-study-3-mobile.jpg"),
         imageAlt: "System documentation and guidelines"
       }
     ],
@@ -824,9 +826,9 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
       { metric: "Documentation", value: "Complete", description: "Comprehensive usage guidelines" }
     ],
     gallery: [
-      { src: "/case-study-3-gallery-1.jpg", alt: "Component library", caption: "Production-ready component library" },
-      { src: "/case-study-3-gallery-2.jpg", alt: "Design tokens", caption: "Flexible token architecture" },
-      { src: "/case-study-3-gallery-3.jpg", alt: "Documentation", caption: "Comprehensive system documentation" }
+      { src: asset("/case-study-3-gallery-1.jpg"), alt: "Component library", caption: "Production-ready component library" },
+      { src: asset("/case-study-3-gallery-2.jpg"), alt: "Design tokens", caption: "Flexible token architecture" },
+      { src: asset("/case-study-3-gallery-3.jpg"), alt: "Documentation", caption: "Comprehensive system documentation" }
     ],
     reflection: "CyberSolution represents more than a design system—it's a philosophy.\n\nThe project reinforced that great design systems aren't about visual polish. They're about infrastructure that enables teams to focus on solving user problems rather than reinventing foundational patterns.\n\nAccessibility, documentation, and flexibility aren't features. They're requirements.\n\nThe most valuable insight: A design system's success isn't measured by how many components it has, but by how much friction it removes from the product development process.",
     testimonial: {
@@ -837,7 +839,7 @@ export const caseStudiesConfig: CaseStudyDetail[] = [
     nextProject: {
       id: 1,
       title: "Enterprise Journey Web App Design",
-      image: "/case-study-1-hero.png"
+      image: asset("/case-study-1-hero.png")
     }
   }
 ];
