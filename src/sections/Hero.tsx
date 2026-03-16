@@ -30,7 +30,6 @@ export function Hero() {
         .fromTo('.hero-role', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
         .fromTo('.hero-desc', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.4')
         .fromTo('.hero-ctas', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.3')
-        .fromTo('.hero-stats', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.2')
         .fromTo('.hero-scroll', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.1');
     }, sectionRef);
 
@@ -166,20 +165,20 @@ export function Hero() {
         className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-12 max-w-7xl mx-auto w-full pt-32 pb-24"
       >
         {/* Eyebrow */}
-        <div className="hero-eyebrow flex items-center gap-3 mb-8">
+        <div className="hero-eyebrow flex items-center gap-3 mb-6">
           <span className="w-8 h-px bg-white/40" aria-hidden="true" />
           <span className="text-white/50 font-body text-xs uppercase tracking-[0.25em]">Product Designer · Nairobi, Kenya</span>
         </div>
 
         {/* Name */}
-        <h1 className="hero-name font-sans font-extrabold text-white leading-[0.95] tracking-tight mb-6">
+        <h1 className="hero-name font-sans font-extrabold text-white leading-[0.95] tracking-tight mb-5">
           <span className="block text-[11vw] md:text-[8vw] lg:text-[7vw]">Conrad</span>
           <span className="block text-[11vw] md:text-[8vw] lg:text-[7vw] text-white/30">Otieno</span>
         </h1>
 
         {/* Role / UVP */}
-        <div className="hero-role max-w-2xl mb-6">
-          <p className="font-serif italic text-2xl md:text-3xl lg:text-4xl text-white/80 leading-snug">
+        <div className="hero-role max-w-xl mb-4">
+          <p className="font-serif italic text-xl md:text-2xl lg:text-3xl text-white/80 leading-snug">
             I design digital products that turn complex problems into{' '}
             <span className="text-white not-italic font-sans font-semibold">intuitive experiences</span>
             {' '}— from UX strategy to pixel-perfect UI.
@@ -187,12 +186,12 @@ export function Hero() {
         </div>
 
         {/* Supporting line */}
-        <p className="hero-desc text-white/40 font-body text-base md:text-lg max-w-lg mb-10 leading-relaxed">
+        <p className="hero-desc text-white/40 font-body text-sm md:text-base max-w-md mb-8 leading-relaxed">
           8+ years working with startups and enterprises across fintech, SaaS, and e-commerce.
         </p>
 
         {/* CTAs */}
-        <div className="hero-ctas flex flex-wrap items-center gap-4 mb-16">
+        <div className="hero-ctas flex flex-wrap items-center gap-4">
           <a
             href="#projects"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-forest-dark font-sans font-semibold text-sm tracking-wide hover:bg-white/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest-dark"
@@ -207,19 +206,7 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Stats */}
-        <div className="hero-stats flex flex-wrap gap-8 md:gap-12 pt-8 border-t border-white/10">
-          {[
-            { value: '8+', label: 'Years Experience' },
-            { value: '50+', label: 'Projects Delivered' },
-            { value: '3', label: 'Industries' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="text-white font-sans font-bold text-2xl md:text-3xl tracking-tight">{stat.value}</p>
-              <p className="text-white/40 font-body text-xs uppercase tracking-widest mt-1">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+
       </div>
 
       {/* Scroll indicator */}
