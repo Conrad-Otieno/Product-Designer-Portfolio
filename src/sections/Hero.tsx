@@ -164,7 +164,7 @@ export function Hero() {
           : 'bg-white/95 backdrop-blur-sm shadow-sm'
       }`} aria-label="Main navigation">
         {heroConfig.brandLogo ? (
-          <a href="/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white rounded">
+          <a href="/Product-Designer-Portfolio/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white rounded">
             <img 
               src={heroConfig.brandLogo} 
               alt={heroConfig.brandName}
@@ -173,7 +173,7 @@ export function Hero() {
           </a>
         ) : (
           <a 
-            href="/" 
+            href="/Product-Designer-Portfolio/" 
             className={`font-sans font-bold text-xl md:text-2xl tracking-tight transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded px-2 py-1 ${
               navDark 
                 ? 'text-white focus:ring-white focus:ring-offset-forest-dark' 
