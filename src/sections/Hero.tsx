@@ -74,8 +74,6 @@ export function Hero() {
         {/* Headline — simple & clean */}
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold text-white tracking-tight leading-[1.1] max-w-2xl mb-4">
           Product Designer
-          <br />
-          <span className="font-serif italic font-normal text-white/50">based in Nairobi</span>
         </h1>
 
         {/* Subtext */}
@@ -84,9 +82,9 @@ export function Hero() {
         </p>
 
         {/* CTA */}
-        <a href="#projects"
+        <a href="#contact"
           className="inline-flex items-center gap-2 px-6 py-3 bg-white text-forest-dark/80 hover:text-forest-dark font-sans font-semibold text-sm rounded-full hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-md">
-          View My Work
+          Contact Me
           <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
