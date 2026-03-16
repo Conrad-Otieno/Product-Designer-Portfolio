@@ -54,18 +54,30 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Right — social links desktop */}
-        <nav aria-label="Social links" className="hidden md:flex items-center gap-4">
+        {/* Right — nav links + social */}
+        <div className="hidden md:flex items-center gap-8">
+          <nav aria-label="Main navigation" className="flex items-center gap-6">
+            {heroConfig.navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-white/60 font-body text-sm hover:text-white transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <div className="w-px h-4 bg-white/20" />
           {footerConfig.socialLinks.filter(s => ['Linkedin', 'Instagram'].includes(s.iconName)).map((social) => (
             <a
               key={social.label}
               href={social.href}
-              className="text-white/50 font-body text-xs hover:text-white transition-colors duration-300"
+              className="text-white/40 font-body text-xs hover:text-white transition-colors duration-300"
             >
               {social.label}
             </a>
           ))}
-        </nav>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -119,18 +131,6 @@ export function Hero() {
           <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
         </a>
 
-        {/* Nav links row */}
-        <nav aria-label="Page sections" className="mt-16 md:mt-20 flex items-center gap-8 md:gap-12">
-          {heroConfig.navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-white/50 font-body text-sm hover:text-white transition-colors duration-300"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
       </div>
 
       {/* Mobile Menu */}
