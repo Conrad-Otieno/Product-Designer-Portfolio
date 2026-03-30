@@ -1,65 +1,55 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Camera, Diamond, Users, Sparkles, type LucideIcon } from 'lucide-react';
 import { servicesConfig } from '../config';
+import { asset } from '../lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const iconMap: Record<string, LucideIcon> = {
-  Camera,
-  Diamond,
-  Users,
-  Sparkles,
-};
+// Map each service to a case study image for the bento cards
+const serviceImages = [
+  asset('/case-study-1-hero.png'),
+  asset('/case-study-2-hero.png'),
+  asset('/case-study-3-hero.png'),
+  asset('/case-study-2-homepage.png'),
+];
 
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const bentoRef = useRef<HTMLDivElement>(null);
 
   if (!servicesConfig.titleLine1 && servicesConfig.services.length === 0) return null;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading — slide up
       ScrollTrigger.create({
         trigger: headingRef.current,
         start: 'top 85%',
         onEnter: () => {
-          gsap.fromTo(
-            headingRef.current,
-            { y: 60, opacity: 0 },
+          gsap.fromTo(headingRef.current,
+            { y: 50, opacity: 0 },
             { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
           );
         },
         once: true,
       });
 
-      // Service cards — staggered slide up
-      const cards = gridRef.current?.querySelectorAll('.service-card');
+      const cards = bentoRef.current?.querySelectorAll('.bento-card');
       if (cards) {
         ScrollTrigger.create({
-          trigger: gridRef.current,
-          start: 'top 78%',
+          trigger: bentoRef.current,
+          start: 'top 80%',
           onEnter: () => {
-            gsap.fromTo(
-              cards,
-              { y: 60, opacity: 0 },
-              {
-                y: 0,
-                opacity: 1,
-                duration: 0.9,
-                ease: 'power3.out',
-                stagger: 0.12,
-              }
+            gsap.fromTo(cards,
+              { y: 50, opacity: 0, scale: 0.96 },
+              { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out', stagger: 0.1 }
             );
           },
           once: true,
         });
       }
     }, sectionRef);
-
     return () => ctx.revert();
   }, []);
 
@@ -70,74 +60,121 @@ export function Services() {
       className="relative w-full py-24 md:py-32 bg-white"
       aria-labelledby="services-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-          {/* Left Column - Heading */}
-          <div ref={headingRef} className="opacity-0">
-            {servicesConfig.subtitle && (
-              <p className="text-softblack/50 text-sm font-body uppercase tracking-widest mb-4">
-                {servicesConfig.subtitle}
-              </p>
-            )}
-            <h2 id="services-heading" className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-softblack tracking-tight leading-tight">
-              {servicesConfig.titleLine1}
-              <br />
-              <span className="font-serif italic font-normal text-softblack/70">
-                {servicesConfig.titleLine2Italic}
-              </span>
-            </h2>
-            {servicesConfig.description && (
-              <p className="mt-6 text-softblack/60 font-body text-base md:text-lg max-w-md leading-relaxed">
-                {servicesConfig.description}
-              </p>
-            )}
-          </div>
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
 
-          {/* Right Column - Services Grid */}
-          <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-softblack/10" role="list">
-            {servicesConfig.services.map((service, index) => {
-              const Icon = iconMap[service.iconName] || Camera;
-              return (
-                <article
-                  key={index}
-                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-forest-dark cursor-pointer focus-within:bg-forest-dark"
-                  role="listitem"
-                >
-                  <div className="mb-4" aria-hidden="true">
-                    <Icon className="w-8 h-8 text-softblack/70 group-hover:text-white/80 transition-colors duration-300" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-sans font-semibold text-softblack group-hover:text-white mb-3 group-hover:translate-x-1 transition-all duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-softblack/60 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
-                    {service.description}
-                  </p>
+        {/* Centered heading — reference style */}
+        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-14 md:mb-20 opacity-0">
+          {servicesConfig.subtitle && (
+            <p className="text-softblack/40 text-xs font-body uppercase tracking-[0.2em] mb-4">
+              {servicesConfig.subtitle}
+            </p>
+          )}
+          <h2 id="services-heading" className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold text-softblack tracking-tight leading-tight mb-4">
+            {servicesConfig.titleLine1}{' '}
+            <span className="font-serif italic font-normal text-softblack/60">
+              {servicesConfig.titleLine2Italic}
+            </span>
+          </h2>
+          {servicesConfig.description && (
+            <p className="text-softblack/50 font-body text-base md:text-lg leading-relaxed">
+              {servicesConfig.description}
+            </p>
+          )}
+        </div>
 
-                  {/* Arrow indicator */}
-                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
-                    <svg
-                      className="w-5 h-5 text-white/60"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+        {/* Bento Grid — reference layout */}
+        <div ref={bentoRef} className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" role="list">
+
+          {/* Card 1 — large, spans 2 cols on md */}
+          <article
+            className="bento-card col-span-2 md:col-span-2 relative rounded-2xl overflow-hidden opacity-0 group cursor-default"
+            style={{ minHeight: '280px' }}
+            role="listitem"
+          >
+            <img
+              src={serviceImages[0]}
+              alt={servicesConfig.services[0]?.title}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-6 md:p-8">
+              <h3 className="text-white font-sans font-bold text-xl md:text-2xl mb-1">
+                {servicesConfig.services[0]?.title}
+              </h3>
+              <p className="text-white/70 font-body text-sm leading-relaxed max-w-xs">
+                {servicesConfig.services[0]?.description}
+              </p>
+            </div>
+          </article>
+
+          {/* Card 2 — single col */}
+          <article
+            className="bento-card col-span-1 relative rounded-2xl overflow-hidden opacity-0 group cursor-default bg-forest-dark/5"
+            style={{ minHeight: '280px' }}
+            role="listitem"
+          >
+            <img
+              src={serviceImages[1]}
+              alt={servicesConfig.services[1]?.title}
+              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-forest-dark/40 to-forest-dark/10" />
+            <div className="absolute bottom-0 left-0 p-5 md:p-6">
+              <h3 className="text-white font-sans font-bold text-lg md:text-xl mb-1">
+                {servicesConfig.services[1]?.title}
+              </h3>
+              <p className="text-white/70 font-body text-xs md:text-sm leading-relaxed">
+                {servicesConfig.services[1]?.description}
+              </p>
+            </div>
+          </article>
+
+          {/* Card 3 — single col */}
+          <article
+            className="bento-card col-span-1 relative rounded-2xl overflow-hidden opacity-0 group cursor-default"
+            style={{ minHeight: '240px' }}
+            role="listitem"
+          >
+            <img
+              src={serviceImages[2]}
+              alt={servicesConfig.services[2]?.title}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/85 via-forest-dark/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-5 md:p-6">
+              <h3 className="text-white font-sans font-bold text-lg md:text-xl mb-1">
+                {servicesConfig.services[2]?.title}
+              </h3>
+              <p className="text-white/70 font-body text-xs md:text-sm leading-relaxed">
+                {servicesConfig.services[2]?.description}
+              </p>
+            </div>
+          </article>
+
+          {/* Card 4 — spans 2 cols */}
+          <article
+            className="bento-card col-span-2 md:col-span-2 relative rounded-2xl overflow-hidden opacity-0 group cursor-default"
+            style={{ minHeight: '240px' }}
+            role="listitem"
+          >
+            <img
+              src={serviceImages[3]}
+              alt={servicesConfig.services[3]?.title}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-6 md:p-8">
+              <h3 className="text-white font-sans font-bold text-xl md:text-2xl mb-1">
+                {servicesConfig.services[3]?.title}
+              </h3>
+              <p className="text-white/70 font-body text-sm leading-relaxed max-w-xs">
+                {servicesConfig.services[3]?.description}
+              </p>
+            </div>
+          </article>
+
         </div>
       </div>
-
-      {/* Decorative element */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-softblack/10 to-transparent" aria-hidden="true" />
     </section>
   );
 }
