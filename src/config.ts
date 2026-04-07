@@ -118,7 +118,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Corporate Web Design",
       year: "2025",
       image: asset("/project-2.png"),
-      description: "UX/UI redesign of a Dubai-based digital transformation consultancy's website — improving clarity, conversion, and mobile experience through the Double Diamond design process.",
+      description: "Strategic UX/UI redesign of DigitalQatalyst's corporate website — transforming a static brochure into a conversion-focused business development engine. Delivered a 43% bounce rate, 52% increase in consultation requests, and 71% value clarity within 90 days of launch.",
     },
     {
       id: 3,
