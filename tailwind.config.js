@@ -20,11 +20,12 @@ module.exports = {
           mid: "#025A4F",
           light: "#037A6B",
         },
-        offwhite: "#FFEFB3",
-        softblack: "#013E37",
+        offwhite: "#F5F5F5",
+        softblack: "#111111",
+        ink: "#111111",
         brand: {
           teal: "#013E37",
-          cream: "#FFEFB3",
+          cream: "#F5F5F5",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

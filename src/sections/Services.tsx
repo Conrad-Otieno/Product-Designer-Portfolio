@@ -94,41 +94,24 @@ export function Services() {
           </div>
 
           {/* Right Column - Services Grid */}
-          <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-softblack/10" role="list">
+          <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#E8E8E8]" role="list">
             {servicesConfig.services.map((service, index) => {
               const Icon = iconMap[service.iconName] || Camera;
               return (
                 <article
                   key={index}
-                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-forest-dark cursor-pointer focus-within:bg-forest-dark"
+                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-300 hover:bg-[#F5F5F5] cursor-default"
                   role="listitem"
                 >
-                  <div className="mb-4" aria-hidden="true">
-                    <Icon className="w-8 h-8 text-softblack/70 group-hover:text-white/80 transition-colors duration-300" strokeWidth={1.5} />
+                  <div className="mb-5" aria-hidden="true">
+                    <Icon className="w-7 h-7 text-[#111111]/40 group-hover:text-[#111111] transition-colors duration-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-sans font-semibold text-softblack group-hover:text-white mb-3 group-hover:translate-x-1 transition-all duration-300">
+                  <h3 className="text-base md:text-lg font-sans font-semibold text-[#111111] mb-2 transition-all duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-softblack/60 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
+                  <p className="text-sm text-[#111111]/50 font-body leading-relaxed group-hover:text-[#111111]/70 transition-colors duration-300">
                     {service.description}
                   </p>
-
-                  {/* Arrow indicator */}
-                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
-                    <svg
-                      className="w-5 h-5 text-white/60"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </div>
                 </article>
               );
             })}
@@ -137,7 +120,7 @@ export function Services() {
       </div>
 
       {/* Decorative element */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-softblack/10 to-transparent" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-[#E8E8E8]" aria-hidden="true" />
     </section>
   );
 }

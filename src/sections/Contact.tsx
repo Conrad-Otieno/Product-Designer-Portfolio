@@ -83,7 +83,7 @@ export function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative w-full py-20 md:py-28 bg-white overflow-hidden"
+      className="relative w-full py-20 md:py-28 bg-[#F5F5F5] overflow-hidden"
       aria-labelledby="contact-heading"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -178,6 +178,7 @@ export function Contact() {
                   label="Send Message"
                   icon="send"
                   status={formStatus}
+                  variant="light"
                 />
               </div>
 

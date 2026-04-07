@@ -82,6 +82,7 @@ export interface Project {
   year: string;
   image: string;
   description: string;
+  hidden?: boolean;
 }
 
 export interface FeaturedProjectsConfig {
@@ -109,6 +110,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       year: "2024",
       image: asset("/project-1.png"),
       description: "Designed an enterprise journey mapping web application that helps organizations visualize and optimize customer experiences across multiple touchpoints.",
+      hidden: true,
     },
     {
       id: 2,
@@ -380,6 +382,7 @@ export interface Takeaway {
 
 export interface CaseStudyDetail {
   id: number;
+  hidden?: boolean;
   title: string;
   category: string;
   year: string;
@@ -416,6 +419,7 @@ export interface CaseStudyDetail {
 export const caseStudiesConfig: CaseStudyDetail[] = [
   {
     id: 1,
+    hidden: true,
     title: "Enterprise Journey Web App Design",
     category: "Web App Design",
     year: "2025",

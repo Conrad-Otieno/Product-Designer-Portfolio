@@ -25,7 +25,7 @@ export function CaseStudy() {
   const nextProjectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!caseStudy) {
+    if (!caseStudy || caseStudy.hidden) {
       navigate('/');
       return;
     }
@@ -245,26 +245,26 @@ export function CaseStudy() {
   if (!caseStudy) return null;
 
   return (
-    <div ref={contentRef} className="relative w-full bg-forest-dark">
+    <div ref={contentRef} className="relative w-full bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-8 flex items-center justify-between bg-gradient-to-b from-forest-dark/90 to-transparent backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-8 flex items-center justify-between bg-gradient-to-b from-[#111111]/90 to-transparent backdrop-blur-sm">
         <Link 
           to="/" 
-          className="flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 group focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest-dark rounded px-3 py-2"
+          className="flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 group focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#111111] rounded px-3 py-2"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
           <span className="font-body text-sm font-medium">Back to Home</span>
         </Link>
         <Link 
           to="/" 
-          className="font-sans font-bold text-white text-xl md:text-2xl tracking-tight hover:text-white/80 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest-dark rounded px-2 py-1"
+          className="font-sans font-bold text-white text-xl md:text-2xl tracking-tight hover:text-white/80 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#111111] rounded px-2 py-1"
         >
           {heroConfig.brandName}
         </Link>
       </nav>
 
       {/* Hero Section */}
-      <div ref={heroRef} className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden bg-forest-dark">
+      <div ref={heroRef} className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] w-full overflow-hidden bg-[#111111]">
         {/* Background Image */}
         <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-12">
           <img
@@ -288,46 +288,46 @@ export function CaseStudy() {
           <div className="max-w-4xl">
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span className="px-4 py-2 bg-forest-dark/5 rounded-full text-forest-dark/80 font-body text-sm font-medium">
+              <span className="px-4 py-2 bg-[#111111]/5 rounded-full text-[#111111]/70 font-body text-sm font-medium">
                 {caseStudy.category}
               </span>
-              <span className="text-softblack/50 font-body text-sm">{caseStudy.year}</span>
-              <span className="w-1 h-1 rounded-full bg-softblack/30" />
-              <span className="text-softblack/50 font-body text-sm">{caseStudy.duration}</span>
+              <span className="text-[#111111]/50 font-body text-sm">{caseStudy.year}</span>
+              <span className="w-1 h-1 rounded-full bg-[#111111]/30" />
+              <span className="text-[#111111]/50 font-body text-sm">{caseStudy.duration}</span>
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-softblack tracking-tight leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-[#111111] tracking-tight leading-tight mb-6">
               {caseStudy.title}
             </h1>
 
             {/* Client */}
-            <p className="text-softblack/60 font-body text-lg mb-8">
-              Client: <span className="text-softblack/80 font-medium">{caseStudy.client}</span>
+            <p className="text-[#111111]/60 font-body text-lg mb-8">
+              Client: <span className="text-[#111111]/80 font-medium">{caseStudy.client}</span>
             </p>
 
             {/* Role */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-softblack/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-[#111111]/10">
               <div>
-                <p className="text-softblack/50 font-body text-sm mb-2">Role</p>
-                <p className="text-softblack font-sans font-medium">{caseStudy.role}</p>
+                <p className="text-[#111111]/50 font-body text-sm mb-2">Role</p>
+                <p className="text-[#111111] font-sans font-medium">{caseStudy.role}</p>
               </div>
               
               {caseStudy.product && (
                 <div>
-                  <p className="text-softblack/50 font-body text-sm mb-2">Product</p>
-                  <p className="text-softblack font-sans font-medium">{caseStudy.product}</p>
+                  <p className="text-[#111111]/50 font-body text-sm mb-2">Product</p>
+                  <p className="text-[#111111] font-sans font-medium">{caseStudy.product}</p>
                 </div>
               )}
               
               {caseStudy.tools && caseStudy.tools.length > 0 && (
                 <div>
-                  <p className="text-softblack/50 font-body text-sm mb-2">Tools</p>
+                  <p className="text-[#111111]/50 font-body text-sm mb-2">Tools</p>
                   <div className="flex items-center gap-3">
                     {caseStudy.tools.map((tool, index) => (
                       <div key={index} className="relative group">
                         {tool === 'Figma' && (
-                          <svg className="w-6 h-6 text-softblack" viewBox="0 0 24 24" fill="currentColor">
+                          <svg className="w-6 h-6 text-[#111111]" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z"/>
                             <path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z"/>
                             <path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z"/>
@@ -336,11 +336,11 @@ export function CaseStudy() {
                           </svg>
                         )}
                         {tool === 'Miro' && (
-                          <svg className="w-6 h-6 text-softblack" viewBox="0 0 24 24" fill="currentColor">
+                          <svg className="w-6 h-6 text-[#111111]" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M17.392 0H13.9L17 4.808 10.444 0h-3.49L12.5 8.586 2.036 0h-1.16L15.2 14.303 9.614 8.586 4.664 24h3.492l2.726-8.586L15.508 24h3.492l-4.95-15.414L24 24h1.316z"/>
                           </svg>
                         )}
-                        <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-softblack text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                        <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-[#111111] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                           {tool}
                         </span>
                       </div>
@@ -354,12 +354,12 @@ export function CaseStudy() {
       </section>
 
       {/* Overview Section */}
-      <section ref={overviewRef} className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-forest-dark">
+      <section ref={overviewRef} className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
             <div className="md:col-span-4">
-              <p className="reveal text-white/50 text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4 opacity-0">Overview</p>
-              <h2 className="reveal text-xl sm:text-2xl md:text-3xl font-sans font-bold text-white opacity-0">Project Summary</h2>
+              <p className="reveal text-[#111111]/50 text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4 opacity-0">Overview</p>
+              <h2 className="reveal text-xl sm:text-2xl md:text-3xl font-sans font-bold text-[#111111] opacity-0">Project Summary</h2>
             </div>
             <div className="md:col-span-8">
               {caseStudy.overview.split('\n\n').map((paragraph, idx) => {
@@ -369,14 +369,14 @@ export function CaseStudy() {
                   return (
                     <div key={idx} className="reveal opacity-0 mb-6 last:mb-0">
                       {intro && (
-                        <p className="text-white/80 font-body text-base md:text-lg lg:text-xl leading-relaxed mb-4">
+                        <p className="text-[#111111]/80 font-body text-base md:text-lg lg:text-xl leading-relaxed mb-4">
                           {intro}
                         </p>
                       )}
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                         {items.map((item, itemIdx) => (
-                          <li key={itemIdx} className="flex items-start gap-3 text-white/80 font-body text-base md:text-lg leading-relaxed">
-                            <span className="text-white/60 mt-1.5 flex-shrink-0">•</span>
+                          <li key={itemIdx} className="flex items-start gap-3 text-[#111111]/80 font-body text-base md:text-lg leading-relaxed">
+                            <span className="text-[#111111]/60 mt-1.5 flex-shrink-0">•</span>
                             <span>{item.trim()}</span>
                           </li>
                         ))}
@@ -385,7 +385,7 @@ export function CaseStudy() {
                   );
                 }
                 return (
-                  <p key={idx} className="reveal text-white/80 font-body text-base md:text-lg lg:text-xl leading-relaxed opacity-0 mb-6 last:mb-0">
+                  <p key={idx} className="reveal text-[#111111]/80 font-body text-base md:text-lg lg:text-xl leading-relaxed opacity-0 mb-6 last:mb-0">
                     {paragraph}
                   </p>
                 );
@@ -399,9 +399,9 @@ export function CaseStudy() {
       <section ref={challengeRef} className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-5xl mx-auto">
-            <p className="reveal text-softblack/50 text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4 opacity-0">The Challenge</p>
-            <h2 className="reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-softblack leading-tight mb-8 md:mb-12 opacity-0">
-              Understanding the <span className="font-serif italic font-normal text-softblack/60">Problem</span>
+            <p className="reveal text-[#111111]/50 text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4 opacity-0">The Challenge</p>
+            <h2 className="reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#111111] leading-tight mb-8 md:mb-12 opacity-0">
+              Understanding the <span className="font-serif italic font-normal text-[#111111]/60">Problem</span>
             </h2>
             
             {caseStudy.challenge.split('\n\n').map((paragraph, idx) => {
@@ -431,7 +431,7 @@ export function CaseStudy() {
                               }}
                             >
                               {/* Animated gradient border */}
-                              <div className="absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-forest-dark/0 via-forest-dark/10 to-forest-dark/0 opacity-0 group-hover:opacity-100" style={{ padding: '1px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
+                              <div className="absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-[#111111]/0 via-[#111111]/10 to-[#111111]/0 opacity-0 group-hover:opacity-100" style={{ padding: '1px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
                               
                               {/* Subtle noise texture overlay */}
                               <div className="absolute inset-0 opacity-[0.015] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
@@ -441,21 +441,19 @@ export function CaseStudy() {
                                 <div className="flex items-start gap-6">
                                   {/* Premium number badge */}
                                   <div className="relative flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center font-sans text-base font-bold transition-all duration-500 group-hover:scale-110 bg-gradient-to-br from-forest-dark to-forest-dark/90 text-white" style={{
-                                      boxShadow: '0 4px 12px rgba(1, 62, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center font-sans text-base font-bold transition-all duration-500 group-hover:scale-110 bg-[#111111] text-white" style={{
+                                      boxShadow: '0 4px 12px rgba(17, 17, 17, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                                     }}>
                                       {String(itemIdx + 1).padStart(2, '0')}
                                     </div>
-                                    {/* Glow effect */}
-                                    <div className="absolute inset-0 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-forest-dark/40" />
                                   </div>
                                   
                                   <div className="flex-1 min-w-0">
-                                    <h4 className="text-lg md:text-xl font-sans font-bold mb-3 transition-colors duration-300 text-softblack">
+                                    <h4 className="text-lg md:text-xl font-sans font-bold mb-3 transition-colors duration-300 text-[#111111]">
                                       {title}
                                     </h4>
                                     {description && (
-                                      <p className="font-body text-sm md:text-base leading-relaxed text-softblack/70">
+                                      <p className="font-body text-sm md:text-base leading-relaxed text-[#111111]/70">
                                         {description}
                                       </p>
                                     )}
@@ -465,7 +463,7 @@ export function CaseStudy() {
                               
                               {/* Shimmer effect on hover */}
                               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-forest-dark/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#111111]/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                               </div>
                             </div>
                           </div>
@@ -477,7 +475,7 @@ export function CaseStudy() {
                 );
               }
               return (
-                <p key={idx} className="reveal text-softblack/70 font-body text-base md:text-lg lg:text-xl leading-relaxed opacity-0 mb-8 max-w-3xl">
+                <p key={idx} className="reveal text-[#111111]/70 font-body text-base md:text-lg lg:text-xl leading-relaxed opacity-0 mb-8 max-w-3xl">
                   {paragraph}
                 </p>
               );
@@ -490,7 +488,7 @@ export function CaseStudy() {
       {caseStudy.designPhases && caseStudy.designPhases.length > 0 ? (
         <>
           {/* Process Overview */}
-          <section className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-forest-dark">
+          <section className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-[#111111]">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
                 <p className="text-white/50 text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4">Approach</p>
@@ -519,24 +517,24 @@ export function CaseStudy() {
           {caseStudy.designPhases.map((phase, phaseIndex) => (
             <section 
               key={phaseIndex} 
-              className={`relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 ${(phaseIndex + 1) % 2 === 0 ? 'bg-forest-dark' : 'bg-white'}`}
+              className={`relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-white`}
             >
               <div className="max-w-7xl mx-auto">
                 {/* Phase Header */}
                 <div className="max-w-4xl mb-12 md:mb-16">
                   {phase.subtitle && (
-                    <p className={`text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4 ${(phaseIndex + 1) % 2 === 0 ? 'text-white/50' : 'text-softblack/50'}`}>
+                    <p className={`text-xs sm:text-sm font-body uppercase tracking-widest mb-3 md:mb-4 text-[#111111]/50`}>
                       {phase.subtitle}
                     </p>
                   )}
-                  <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold leading-tight mb-4 md:mb-6 ${(phaseIndex + 1) % 2 === 0 ? 'text-white' : 'text-softblack'}`}>
+                  <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold leading-tight mb-4 md:mb-6 text-[#111111]`}>
                     {phase.title}
                   </h2>
                   {phase.description.split('\n\n').map((paragraph, pIdx) => {
                     // Check if paragraph is a section header (ends with colon)
                     if (paragraph.trim().endsWith(':') && !paragraph.includes('\n')) {
                       return (
-                        <h3 key={pIdx} className={`font-sans font-bold text-xl md:text-2xl mb-4 mt-8 first:mt-0 ${(phaseIndex + 1) % 2 === 0 ? 'text-white' : 'text-softblack'}`}>
+                        <h3 key={pIdx} className={`font-sans font-bold text-xl md:text-2xl mb-4 mt-8 first:mt-0 text-[#111111]`}>
                           {paragraph.trim()}
                         </h3>
                       );
@@ -548,7 +546,7 @@ export function CaseStudy() {
                       return (
                         <div key={pIdx} className="mb-6 last:mb-0">
                           {intro && intro.trim() && (
-                            <p className={`font-body text-base md:text-lg leading-relaxed mb-4 ${(phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'}`}>
+                            <p className={`font-body text-base md:text-lg leading-relaxed mb-4 text-[#111111]/70`}>
                               {intro.trim()}
                             </p>
                           )}
@@ -558,8 +556,8 @@ export function CaseStudy() {
                               if (match) {
                                 const [, number, content] = match;
                                 return (
-                                  <li key={itemIdx} className={`flex items-start gap-4 font-body text-base md:text-lg leading-relaxed ${(phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'}`}>
-                                    <span className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center font-sans text-sm font-bold ${(phaseIndex + 1) % 2 === 0 ? 'bg-white/10 text-white' : 'bg-forest-dark/10 text-forest-dark'}`}>
+                                  <li key={itemIdx} className={`flex items-start gap-4 font-body text-base md:text-lg leading-relaxed text-[#111111]/70`}>
+                                    <span className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center font-sans text-sm font-bold bg-[#111111]/10 text-[#111111]`}>
                                       {number}
                                     </span>
                                     <span className="flex-1">{content}</span>
@@ -578,14 +576,14 @@ export function CaseStudy() {
                       return (
                         <div key={pIdx} className="mb-8 last:mb-0">
                           {intro && intro.trim() && (
-                            <h4 className={`font-sans font-semibold text-lg md:text-xl mb-4 ${(phaseIndex + 1) % 2 === 0 ? 'text-white/90' : 'text-softblack/90'}`}>
+                            <h4 className={`font-sans font-semibold text-lg md:text-xl mb-4 text-[#111111]/90`}>
                               {intro.trim()}
                             </h4>
                           )}
                           <ul className="space-y-3 pl-0">
                             {items.map((item, itemIdx) => (
-                              <li key={itemIdx} className={`flex items-start gap-4 font-body text-base md:text-lg leading-relaxed ${(phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'}`}>
-                                <span className={`flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2.5 ${(phaseIndex + 1) % 2 === 0 ? 'bg-white/60' : 'bg-forest-dark/60'}`}></span>
+                              <li key={itemIdx} className={`flex items-start gap-4 font-body text-base md:text-lg leading-relaxed text-[#111111]/70`}>
+                                <span className={`flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2.5 bg-[#111111]/60`}></span>
                                 <span className="flex-1">{item.trim()}</span>
                               </li>
                             ))}
@@ -594,7 +592,7 @@ export function CaseStudy() {
                       );
                     }
                     return (
-                      <p key={pIdx} className={`font-body text-base md:text-lg lg:text-xl leading-relaxed mb-6 last:mb-0 ${(phaseIndex + 1) % 2 === 0 ? 'text-white/80' : 'text-softblack/80'} italic`}>
+                      <p key={pIdx} className={`font-body text-base md:text-lg lg:text-xl leading-relaxed mb-6 last:mb-0 text-[#111111]/80 italic`}>
                         {paragraph}
                       </p>
                     );
@@ -607,23 +605,13 @@ export function CaseStudy() {
                     {phase.insights.map((insight, idx) => (
                       <div 
                         key={idx}
-                        className={`group relative transition-all duration-300 hover:scale-[1.02] ${
-                          (phaseIndex + 1) % 2 === 0 
-                            ? 'bg-gradient-to-br from-forest-dark via-forest-dark to-[#012d28]' 
-                            : 'bg-gradient-to-br from-white via-white to-gray-50'
-                        } rounded-2xl overflow-hidden`}
+                        className={`group relative transition-all duration-300 hover:scale-[1.02] bg-white border border-[#111111]/8 rounded-2xl overflow-hidden`}
                         style={{
-                          boxShadow: (phaseIndex + 1) % 2 === 0 
-                            ? '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)' 
-                            : '0 4px 24px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05)',
+                          boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04)',
                         }}
                       >
                         {/* Animated gradient border */}
-                        <div className={`absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none ${
-                          (phaseIndex + 1) % 2 === 0 
-                            ? 'bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100' 
-                            : 'bg-gradient-to-r from-forest-dark/0 via-forest-dark/10 to-forest-dark/0 opacity-0 group-hover:opacity-100'
-                        }`} style={{ padding: '1px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
+                        <div className={`absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-[#111111]/0 via-[#111111]/10 to-[#111111]/0 opacity-0 group-hover:opacity-100`} style={{ padding: '1px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
                         
                         {/* Subtle noise texture overlay */}
                         <div className="absolute inset-0 opacity-[0.015] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
@@ -633,32 +621,20 @@ export function CaseStudy() {
                           <div className="flex items-start gap-6">
                             {/* Premium number badge */}
                             <div className="relative flex-shrink-0">
-                              <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-sans text-base font-bold transition-all duration-500 group-hover:scale-110 ${
-                                (phaseIndex + 1) % 2 === 0 
-                                  ? 'bg-gradient-to-br from-white/20 to-white/10 text-white backdrop-blur-sm border border-white/20' 
-                                  : 'bg-gradient-to-br from-forest-dark to-forest-dark/90 text-white'
-                              }`} style={{
-                                boxShadow: (phaseIndex + 1) % 2 === 0 
-                                  ? 'inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3)' 
-                                  : '0 4px 12px rgba(1, 62, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                              <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-sans text-base font-bold transition-all duration-500 group-hover:scale-110 bg-[#111111] text-white`} style={{
+                                boxShadow: '0 4px 12px rgba(17, 17, 17, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                               }}>
                                 {String(idx + 1).padStart(2, '0')}
                               </div>
                               {/* Glow effect */}
-                              <div className={`absolute inset-0 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 ${
-                                (phaseIndex + 1) % 2 === 0 ? 'bg-white/30' : 'bg-forest-dark/40'
-                              }`} />
+                              <div className={`absolute inset-0 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-[#111111]/20`} />
                             </div>
                             
                             <div className="flex-1 min-w-0">
-                              <h4 className={`text-lg md:text-xl font-sans font-bold mb-3 transition-colors duration-300 ${
-                                (phaseIndex + 1) % 2 === 0 ? 'text-white' : 'text-softblack'
-                              }`}>
+                              <h4 className={`text-lg md:text-xl font-sans font-bold mb-3 transition-colors duration-300 text-[#111111]`}>
                                 {insight.title}
                               </h4>
-                              <p className={`font-body text-sm md:text-base leading-relaxed ${
-                                (phaseIndex + 1) % 2 === 0 ? 'text-white/80' : 'text-softblack/70'
-                              }`}>
+                              <p className={`font-body text-sm md:text-base leading-relaxed text-[#111111]/70`}>
                                 {insight.description}
                               </p>
                             </div>
@@ -667,11 +643,7 @@ export function CaseStudy() {
                         
                         {/* Shimmer effect on hover */}
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                          <div className={`absolute inset-0 ${
-                            (phaseIndex + 1) % 2 === 0 
-                              ? 'bg-gradient-to-r from-transparent via-white/5 to-transparent' 
-                              : 'bg-gradient-to-r from-transparent via-forest-dark/5 to-transparent'
-                          } translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000`} />
+                          <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-[#111111]/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000`} />
                         </div>
                       </div>
                     ))}
@@ -680,19 +652,11 @@ export function CaseStudy() {
 
                 {/* Problem Statement */}
                 {phase.problemStatement && (
-                  <div className={`p-8 md:p-10 rounded-2xl border-l-4 mb-8 ${
-                    (phaseIndex + 1) % 2 === 0 
-                      ? 'bg-white/5 border-white/30' 
-                      : 'bg-forest-dark/5 border-forest-dark'
-                  }`}>
-                    <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-4 ${
-                      (phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'
-                    }`}>
+                  <div className={`p-8 md:p-10 rounded-2xl border-l-4 mb-8 bg-[#111111]/5 border-[#111111]`}>
+                    <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-4 text-[#111111]/70`}>
                       Problem Statement
                     </h5>
-                    <p className={`font-body text-lg md:text-xl leading-relaxed ${
-                      (phaseIndex + 1) % 2 === 0 ? 'text-white/90' : 'text-softblack/90'
-                    }`}>
+                    <p className={`font-body text-lg md:text-xl leading-relaxed text-[#111111]/90`}>
                       {phase.problemStatement}
                     </p>
                   </div>
@@ -700,22 +664,14 @@ export function CaseStudy() {
 
                 {/* Product Vision, Goals & User Stories Combined */}
                 {(phase.productVision || phase.goals || phase.userStories) && (
-                  <div className={`p-8 md:p-10 rounded-2xl mb-12 ${
-                    (phaseIndex + 1) % 2 === 0 
-                      ? 'bg-white/5' 
-                      : 'bg-forest-dark/5'
-                  }`}>
+                  <div className={`p-8 md:p-10 rounded-2xl mb-12 bg-[#111111]/5`}>
                     {/* Product Vision */}
                     {phase.productVision && (
                       <div className="mb-8">
-                        <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-4 ${
-                          (phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'
-                        }`}>
+                        <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-4 text-[#111111]/70`}>
                           Product Vision
                         </h5>
-                        <p className={`font-body text-lg md:text-xl leading-relaxed ${
-                          (phaseIndex + 1) % 2 === 0 ? 'text-white/90' : 'text-softblack/90'
-                        }`}>
+                        <p className={`font-body text-lg md:text-xl leading-relaxed text-[#111111]/90`}>
                           {phase.productVision}
                         </p>
                       </div>
@@ -724,9 +680,7 @@ export function CaseStudy() {
                     {/* Goals List */}
                     {phase.goals && phase.goals.length > 0 && (
                       <div className="mb-8">
-                        <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-4 ${
-                          (phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'
-                        }`}>
+                        <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-4 text-[#111111]/70`}>
                           Project Goals
                         </h5>
                         <ul className="space-y-3">
@@ -735,16 +689,10 @@ export function CaseStudy() {
                               key={idx}
                               className="flex items-start gap-4"
                             >
-                              <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs font-bold mt-0.5 ${
-                                (phaseIndex + 1) % 2 === 0 
-                                  ? 'bg-white/15 text-white' 
-                                  : 'bg-forest-dark/10 text-forest-dark'
-                              }`}>
+                              <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs font-bold mt-0.5 bg-[#111111]/10 text-[#111111]`}>
                                 {idx + 1}
                               </div>
-                              <p className={`font-body text-base md:text-lg leading-relaxed flex-1 ${
-                                (phaseIndex + 1) % 2 === 0 ? 'text-white/85' : 'text-softblack/85'
-                              }`}>
+                              <p className={`font-body text-base md:text-lg leading-relaxed flex-1 text-[#111111]/85`}>
                                 {goal}
                               </p>
                             </li>
@@ -756,34 +704,18 @@ export function CaseStudy() {
                     {/* User Stories & Features Table */}
                     {phase.userStories && phase.userStories.length > 0 && (
                       <div>
-                        <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-6 ${
-                          (phaseIndex + 1) % 2 === 0 ? 'text-white/70' : 'text-softblack/70'
-                        }`}>
+                        <h5 className={`text-sm font-sans font-bold uppercase tracking-wider mb-6 text-[#111111]/70`}>
                           User Stories
                         </h5>
                         
                         {/* Table */}
-                        <div className={`rounded-2xl overflow-hidden ${
-                          (phaseIndex + 1) % 2 === 0 
-                            ? 'bg-white/5' 
-                            : 'bg-white shadow-lg'
-                        }`}>
+                        <div className={`rounded-2xl overflow-hidden bg-white shadow-lg`}>
                           {/* Table Header */}
-                          <div className={`grid grid-cols-1 md:grid-cols-[1.2fr,1fr] ${
-                            (phaseIndex + 1) % 2 === 0 
-                              ? 'bg-white/10 border-b border-white/20' 
-                              : 'bg-forest-dark/5 border-b border-softblack/10'
-                          }`}>
-                            <div className={`px-8 py-5 font-sans font-bold text-xs uppercase tracking-widest md:border-r ${
-                              (phaseIndex + 1) % 2 === 0 
-                                ? 'text-white/80 border-white/20' 
-                                : 'text-softblack/70 border-softblack/10'
-                            }`}>
+                          <div className={`grid grid-cols-1 md:grid-cols-[1.2fr,1fr] bg-[#111111]/5 border-b border-[#111111]/10`}>
+                            <div className={`px-8 py-5 font-sans font-bold text-xs uppercase tracking-widest md:border-r text-[#111111]/70 border-[#111111]/10`}>
                               User Story
                             </div>
-                            <div className={`px-8 py-5 font-sans font-bold text-xs uppercase tracking-widest ${
-                              (phaseIndex + 1) % 2 === 0 ? 'text-white/80' : 'text-softblack/70'
-                            }`}>
+                            <div className={`px-8 py-5 font-sans font-bold text-xs uppercase tracking-widest text-[#111111]/70`}>
                               Solution Feature
                             </div>
                           </div>
@@ -794,27 +726,15 @@ export function CaseStudy() {
                               key={idx}
                               className={`grid grid-cols-1 md:grid-cols-[1.2fr,1fr] transition-colors duration-200 ${
                                 idx !== (phase.userStories?.length ?? 0) - 1 ? 'border-b' : ''
-                              } ${
-                                (phaseIndex + 1) % 2 === 0 
-                                  ? 'border-white/10 hover:bg-white/5' 
-                                  : 'border-softblack/5 hover:bg-forest-dark/5'
-                              }`}
+                              } border-[#111111]/5 hover:bg-[#111111]/5`}
                             >
                               {/* User Story Column */}
-                              <div className={`px-8 py-8 md:border-r flex flex-col justify-center ${
-                                (phaseIndex + 1) % 2 === 0 ? 'border-white/10' : 'border-softblack/10'
-                              }`}>
+                              <div className={`px-8 py-8 md:border-r flex flex-col justify-center border-[#111111]/10`}>
                                 <div className="flex items-start gap-4">
-                                  <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-sans font-bold mt-0.5 ${
-                                    (phaseIndex + 1) % 2 === 0 
-                                      ? 'bg-white/15 text-white' 
-                                      : 'bg-forest-dark/10 text-forest-dark'
-                                  }`}>
+                                  <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-sans font-bold mt-0.5 bg-[#111111]/10 text-[#111111]`}>
                                     {idx + 1}
                                   </div>
-                                  <p className={`font-body text-base leading-relaxed italic ${
-                                    (phaseIndex + 1) % 2 === 0 ? 'text-white/90' : 'text-softblack/90'
-                                  }`}>
+                                  <p className={`font-body text-base leading-relaxed italic text-[#111111]/90`}>
                                     "{item.story}"
                                   </p>
                                 </div>
@@ -822,15 +742,11 @@ export function CaseStudy() {
                               
                               {/* Solution Feature Column */}
                               <div className="px-8 py-8 flex flex-col justify-center">
-                                <p className={`font-body text-base leading-relaxed ${
-                                  (phaseIndex + 1) % 2 === 0 ? 'text-white/85' : 'text-softblack/85'
-                                }`}>
-                                  <span className={`font-sans font-bold block mb-2 ${
-                                    (phaseIndex + 1) % 2 === 0 ? 'text-white' : 'text-forest-dark'
-                                  }`}>
+                                <p className={`font-body text-base leading-relaxed text-[#111111]/85`}>
+                                  <span className={`font-sans font-bold block mb-2 text-[#111111]`}>
                                     {item.feature.split(':')[0]}
                                   </span>
-                                  <span className={(phaseIndex + 1) % 2 === 0 ? 'text-white/75' : 'text-softblack/75'}>
+                                  <span className={`text-[#111111]/75`}>
                                     {item.feature.split(':')[1]?.trim()}
                                   </span>
                                 </p>

@@ -57,7 +57,7 @@ export function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full bg-forest-dark pt-24 md:pt-32 lg:pt-40 pb-12 overflow-hidden"
+      className="relative w-full bg-ink pt-24 md:pt-32 lg:pt-40 pb-12 overflow-hidden"
       aria-labelledby="footer-heading"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -122,7 +122,7 @@ export function Footer() {
                         <a
                           href={social.href}
                           aria-label={social.label}
-                          className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-white hover:text-forest-dark transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest-dark"
+                          className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white hover:text-[#111111] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#111111]"
                         >
                           <Icon className="w-5 h-5" strokeWidth={1.5} aria-hidden="true" />
                         </a>
@@ -151,7 +151,7 @@ export function Footer() {
                     <li key={link.label}>
                       <a 
                         href={link.href} 
-                        className="hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest-dark rounded"
+                        className="hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#111111] rounded"
                       >
                         {link.label}
                       </a>
