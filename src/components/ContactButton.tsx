@@ -31,8 +31,8 @@ export function ContactButton({
   // dark variant: white button on dark background (hero)
   // light variant: dark button on light background (contact form)
   const classes = variant === 'dark'
-    ? 'group relative inline-flex items-center gap-3 px-8 py-3.5 bg-white text-[#111111] font-sans font-semibold text-sm rounded-full hover:bg-white/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#111111] disabled:opacity-50 disabled:cursor-not-allowed'
-    : 'group relative inline-flex items-center gap-3 px-10 py-4 bg-[#111111] text-white font-sans font-semibold text-sm overflow-hidden transition-all duration-300 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[#111111] focus:ring-offset-4 disabled:opacity-50 disabled:cursor-not-allowed';
+    ? 'group relative inline-flex items-center gap-3 px-8 py-3.5 bg-white text-forest-dark font-sans font-semibold text-sm rounded-full hover:bg-white/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-forest-dark disabled:opacity-50 disabled:cursor-not-allowed'
+    : 'group relative inline-flex items-center gap-3 px-10 py-4 bg-forest-dark text-white font-sans font-semibold text-sm overflow-hidden transition-all duration-300 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-forest-dark focus:ring-offset-4 disabled:opacity-50 disabled:cursor-not-allowed';
 
   const inner = (
     <>

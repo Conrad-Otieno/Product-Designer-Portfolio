@@ -115,10 +115,10 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
     {
       id: 2,
       title: "DigitalQatalyst Corporate Website",
-      category: "Corporate Web | B2B Digital",
+      category: "Corporate Web Design",
       year: "2025",
       image: asset("/project-2.png"),
-      description: "Applying the Double Diamond Design Process to transform a digital transformation consultancy's web presence in Dubai.",
+      description: "UX/UI redesign of a Dubai-based digital transformation consultancy's website — improving clarity, conversion, and mobile experience through the Double Diamond design process.",
     },
     {
       id: 3,

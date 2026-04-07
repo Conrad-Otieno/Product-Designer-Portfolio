@@ -21,7 +21,7 @@ module.exports = {
           light: "#037A6B",
         },
         offwhite: "#F5F5F5",
-        softblack: "#111111",
+        softblack: "#013E37",
         ink: "#111111",
         brand: {
           teal: "#013E37",

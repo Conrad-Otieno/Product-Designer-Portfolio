@@ -100,16 +100,16 @@ export function Services() {
               return (
                 <article
                   key={index}
-                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-300 hover:bg-[#F5F5F5] cursor-default"
+                  className="service-card group bg-white p-6 md:p-8 opacity-0 transition-all duration-300 hover:bg-forest-dark cursor-default"
                   role="listitem"
                 >
                   <div className="mb-5" aria-hidden="true">
-                    <Icon className="w-7 h-7 text-[#111111]/40 group-hover:text-[#111111] transition-colors duration-300" strokeWidth={1.5} />
+                    <Icon className="w-7 h-7 text-[#111111]/40 group-hover:text-white/80 transition-colors duration-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-base md:text-lg font-sans font-semibold text-[#111111] mb-2 transition-all duration-300">
+                  <h3 className="text-base md:text-lg font-sans font-semibold text-[#111111] mb-2 group-hover:text-white transition-all duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#111111]/50 font-body leading-relaxed group-hover:text-[#111111]/70 transition-colors duration-300">
+                  <p className="text-sm text-[#111111]/50 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
                     {service.description}
                   </p>
                 </article>

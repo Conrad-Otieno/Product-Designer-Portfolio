@@ -30,7 +30,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen w-full flex flex-col bg-ink"
+      className="relative min-h-screen w-full flex flex-col bg-forest-dark"
       aria-label="Hero section"
     >
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-[#111111] focus:rounded">
@@ -39,7 +39,7 @@ export function Hero() {
 
       {/* Sticky Nav */}
       <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? 'bg-ink/95 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-forest-dark/95 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-transparent'
       }`}>
         <a href="/Product-Designer-Portfolio/" className="font-sans font-bold text-white text-lg tracking-tight">
           {heroConfig.brandName}
@@ -88,7 +88,7 @@ export function Hero() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-ink flex flex-col">
+        <div className="fixed inset-0 z-50 bg-forest-dark flex flex-col">
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
             <span className="text-white font-sans font-bold text-lg">{heroConfig.brandName}</span>
             <button onClick={() => setMobileMenuOpen(false)} className="text-white/70 hover:text-white p-2" aria-label="Close menu">
